@@ -4,6 +4,7 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Http.Features;
 using Xunit;
+using Microsoft.AspNetCore.Http;
 
 namespace Microsoft.AspNetCore.Owin
 {
@@ -25,7 +26,7 @@ namespace Microsoft.AspNetCore.Owin
         {
             var env = new Dictionary<string, object>
             {
-                { "owin.RequestMethod", "POST" },
+                { "owin.RequestMethod", HttpMethods.Post },
                 { "owin.RequestPath", "/path" },
                 { "owin.RequestPathBase", "/pathBase" },
                 { "owin.RequestQueryString", "name=value" },
@@ -33,7 +34,7 @@ namespace Microsoft.AspNetCore.Owin
             var features = new OwinFeatureCollection(env);
 
             var requestFeature = Get<IHttpRequestFeature>(features);
-            Assert.Equal(requestFeature.Method, "POST");
+            Assert.Equal(requestFeature.Method, HttpMethods.Post);
             Assert.Equal(requestFeature.Path, "/path");
             Assert.Equal(requestFeature.PathBase, "/pathBase");
             Assert.Equal(requestFeature.QueryString, "?name=value");
