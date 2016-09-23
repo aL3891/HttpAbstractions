@@ -16,44 +16,44 @@ namespace Microsoft.AspNetCore.Http
         public const string Put = "PUT";
         public const string Trace = "TRACE";
 
-        public static bool IsConnectMethod(string inputMethod)
+        public static bool IsConnectMethod(string method)
         {
-            return object.ReferenceEquals(Connect ,inputMethod) | StringComparer.OrdinalIgnoreCase.Equals(Connect, inputMethod);
+            return object.ReferenceEquals(Connect, method) || StringComparer.OrdinalIgnoreCase.Equals(Connect, method);
         }
 
-        public static bool IsDeleteMethod(string inputMethod)
+        public static bool IsDeleteMethod(string method)
         {
-            return object.ReferenceEquals(Delete, inputMethod) | StringComparer.OrdinalIgnoreCase.Equals(Delete, inputMethod);
+            return object.ReferenceEquals(Delete, method) || StringComparer.OrdinalIgnoreCase.Equals(Delete, method);
         }
 
-        public static bool IsGetMethod(string inputMethod)
+        public static bool IsGetMethod(string method)
         {
-            return object.ReferenceEquals(Get, inputMethod) | StringComparer.OrdinalIgnoreCase.Equals(Get, inputMethod);
+            return object.ReferenceEquals(Get, method) || StringComparer.OrdinalIgnoreCase.Equals(Get, method);
         }
 
-        public static bool IsOptionsMethod(string inputMethod)
+        public static bool IsOptionsMethod(string method)
         {
-            return object.ReferenceEquals(Options, inputMethod) | StringComparer.OrdinalIgnoreCase.Equals(Options, inputMethod);
+            return object.ReferenceEquals(Options, method) || StringComparer.OrdinalIgnoreCase.Equals(Options, method);
         }
 
-        public static bool IsPatchMethod(string inputMethod)
+        public static bool IsPatchMethod(string method)
         {
-            return object.ReferenceEquals(Patch, inputMethod) | StringComparer.OrdinalIgnoreCase.Equals(Patch, inputMethod);
+            return object.ReferenceEquals(Patch, method) || StringComparer.OrdinalIgnoreCase.Equals(Patch, method);
         }
 
-        public static bool IsPostMethod(string inputMethod)
+        public static bool IsPostMethod(string method)
         {
-            return object.ReferenceEquals(Post, inputMethod) | StringComparer.OrdinalIgnoreCase.Equals(Post, inputMethod);
+            return object.ReferenceEquals(Post, method) || StringComparer.OrdinalIgnoreCase.Equals(Post, method);
         }
 
-        public static bool IsPutMethod(string inputMethod)
+        public static bool IsPutMethod(string method)
         {
-            return object.ReferenceEquals(Put, inputMethod) | StringComparer.OrdinalIgnoreCase.Equals(Put, inputMethod);
+            return object.ReferenceEquals(Put, method) || StringComparer.OrdinalIgnoreCase.Equals(Put, method);
         }
 
-        public static bool IsTraceMethod(string inputMethod)
+        public static bool IsTraceMethod(string method)
         {
-            return object.ReferenceEquals(Trace, inputMethod) | StringComparer.OrdinalIgnoreCase.Equals(Trace, inputMethod);
+            return object.ReferenceEquals(Trace, method) || StringComparer.OrdinalIgnoreCase.Equals(Trace, method);
         }
     }
 }
