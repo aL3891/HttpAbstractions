@@ -33,7 +33,7 @@ namespace Microsoft.AspNetCore.Http
         }
 
         public static bool IsHeadMethod(string method){
-            return object.ReferenceEquals(Head, method) || StringComparer.OrdinalIgnoreCase.Equals(Head,method);
+            return object.ReferenceEquals(Head, method) || StringComparer.OrdinalIgnoreCase.Equals(Head, method);
         }
 
         public static bool IsOptionsMethod(string method)
