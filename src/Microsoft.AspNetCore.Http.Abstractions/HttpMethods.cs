@@ -55,5 +55,10 @@ namespace Microsoft.AspNetCore.Http
         {
             return object.ReferenceEquals(Trace, method) || StringComparer.OrdinalIgnoreCase.Equals(Trace, method);
         }
+
+        public static bool Equals(string left, string right)
+        {
+            return StringComparer.OrdinalIgnoreCase.Equals(left, right);
+        }
     }
 }
