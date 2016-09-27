@@ -26,7 +26,7 @@ namespace Microsoft.AspNetCore.Owin
         {
             var env = new Dictionary<string, object>
             {
-                { "owin.RequestMethod", HttpMethods.Post },
+                { "owin.RequestMethod", HttpMethod.Post },
                 { "owin.RequestPath", "/path" },
                 { "owin.RequestPathBase", "/pathBase" },
                 { "owin.RequestQueryString", "name=value" },
@@ -34,7 +34,7 @@ namespace Microsoft.AspNetCore.Owin
             var features = new OwinFeatureCollection(env);
 
             var requestFeature = Get<IHttpRequestFeature>(features);
-            Assert.Equal(requestFeature.Method, HttpMethods.Post);
+            Assert.Equal(requestFeature.Method, HttpMethod.Post);
             Assert.Equal(requestFeature.Path, "/path");
             Assert.Equal(requestFeature.PathBase, "/pathBase");
             Assert.Equal(requestFeature.QueryString, "?name=value");
